@@ -16,7 +16,6 @@ export const startLoginEmailPassword = (email, password) => {
                 dispatch(finishLoading());
             })
             .catch( (e) => {
-                console.log(e)
                 dispatch(finishLoading());
                 Swal.fire("Error", e.message, "error");
             });
@@ -34,7 +33,6 @@ export const startRegisterWithEmailPassName = ( email, password, name) => {
                 dispatch(login( user.uid, user.displayName)); 
             })
             .catch( (e) => {
-                console.log(e)
                 Swal.fire("Error", e.message, "error");
             });
     }
@@ -44,7 +42,6 @@ export const startGoogleLogin = () => {
     return (dispatch) => {
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({user}) => {
-                console.log(user)
                 dispatch(login( user.uid, user.displayName)); 
             });
     }

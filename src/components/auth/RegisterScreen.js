@@ -11,7 +11,6 @@ export const RegisterScreen = () => {
 
     const dispatch = useDispatch();
     const msgError = useSelector(({ui}) => ui.msgError) 
-    console.log(msgError)
     
     const initialState = {
         name: '',
